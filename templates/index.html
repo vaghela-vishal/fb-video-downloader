@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook Video Downloader</title>
+</head>
+<body>
+    <h1>Facebook Video Downloader</h1>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Paste Facebook video URL" required>
+        <button type="submit">Download</button>
+    </form>
+    {% if downloaded %}
+        <p>Video downloaded successfully!</p>
+        <video width="480" controls>
+            <source src="{{ video_path }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <a href="{{ video_path }}" download>Download Video</a>
+    {% endif %}
+</body>
+</html>
